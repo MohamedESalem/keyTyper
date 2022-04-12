@@ -21,7 +21,7 @@ public class KeyTyper {
     static Robot rb;
     static int read;
     static char c;
-    static int speed = 30; //Type speed by milisecondes 110'nature'
+    static int speed = 20; //Type speed by milisecondes 110'nature'
     static boolean capState; //caps lock state
     static String line;
     //static boolean lock = false; // to get the state of a key and start typing or stop
@@ -52,7 +52,7 @@ public class KeyTyper {
         try {
             line = br.readLine();
             while (line != null) {
-                System.out.println(line);
+                //System.out.println(line);
                 fw.write(line + " \n");
 
                 line = br.readLine();
@@ -84,301 +84,385 @@ public class KeyTyper {
             read = fr.read();
 
             while (read != -1) {
-                
-                    if (read >= 65 && read <= 90) {//this is the range of capital leters
-                        rb.keyPress(KeyEvent.VK_SHIFT);//turn on capslock
-
-                        rb.keyPress(read);
-                        rb.delay(speed);// write speed by milisecondes
-                        rb.keyRelease(read);
-
-                        rb.keyRelease(KeyEvent.VK_SHIFT);//turn off capslock
-
-                    } else if (read >= 97 && read <= 122) {//this is the range of small leters
-
-                        switch (read) {//switch on all the small charecters to type it
-                            case 97:
-                                rb.keyPress(KeyEvent.VK_A);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_A);
-                                break;
-
-                            case 98:
-                                rb.keyPress(KeyEvent.VK_B);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_B);
-                                break;
-
-                            case 99:
-                                rb.keyPress(KeyEvent.VK_C);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_C);
-                                break;
-
-                            case 100:
-                                rb.keyPress(KeyEvent.VK_D);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_D);
-                                break;
-
-                            case 101:
-                                rb.keyPress(KeyEvent.VK_E);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_E);
-                                break;
-
-                            case 102:
-                                rb.keyPress(KeyEvent.VK_F);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_F);
-                                break;
-
-                            case 103:
-                                rb.keyPress(KeyEvent.VK_G);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_G);
-                                break;
-
-                            case 104:
-                                rb.keyPress(KeyEvent.VK_H);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_H);
-                                break;
-
-                            case 105:
-                                rb.keyPress(KeyEvent.VK_I);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_I);
-                                break;
-
-                            case 106:
-                                rb.keyPress(KeyEvent.VK_J);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_J);
-                                break;
-
-                            case 107:
-                                rb.keyPress(KeyEvent.VK_K);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_K);
-                                break;
-
-                            case 108:
-                                rb.keyPress(KeyEvent.VK_L);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_L);
-                                break;
-
-                            case 109:
-                                rb.keyPress(KeyEvent.VK_M);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_M);
-                                break;
-
-                            case 110:
-                                rb.keyPress(KeyEvent.VK_N);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_N);
-                                break;
-
-                            case 111:
-                                rb.keyPress(KeyEvent.VK_O);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_O);
-                                break;
-
-                            case 112:
-                                rb.keyPress(KeyEvent.VK_P);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_P);
-                                break;
-
-                            case 113:
-                                rb.keyPress(KeyEvent.VK_Q);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_Q);
-                                break;
-
-                            case 114:
-                                rb.keyPress(KeyEvent.VK_R);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_R);
-                                break;
-
-                            case 115:
-                                rb.keyPress(KeyEvent.VK_S);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_S);
-                                break;
-
-                            case 116:
-                                rb.keyPress(KeyEvent.VK_T);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_T);
-                                break;
-
-                            case 117:
-                                rb.keyPress(KeyEvent.VK_U);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_U);
-                                break;
-
-                            case 118:
-                                rb.keyPress(KeyEvent.VK_V);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_V);
-                                break;
-
-                            case 119:
-                                rb.keyPress(KeyEvent.VK_W);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_W);
-                                break;
-
-                            case 120:
-                                rb.keyPress(KeyEvent.VK_X);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_X);
-                                break;
-
-                            case 121:
-                                rb.keyPress(KeyEvent.VK_Y);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_Y);
-                                break;
-
-                            case 122:
-                                rb.keyPress(KeyEvent.VK_Z);
-                                rb.delay(speed);// write speed by milisecondes
-                                rb.keyRelease(KeyEvent.VK_Z);
-
-                        }
-
-                    } else {// switch on all symbols like ""
-                        try {
-                            switch (read) {
-                                case 46: //46 is dot "."
-                                    rb.keyPress(read);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(read);
-                                    break;
-
-                                case 32: //32 is Space " "
-                                    rb.keyPress(KeyEvent.VK_SPACE);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_SPACE);
-                                    break;
 
-                                case 44: //44 is coma ","
-                                    rb.keyPress(KeyEvent.VK_COMMA);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_COMMA);
-                                    break;
-
-                                case 58: //58 is colon ":"
-                                    rb.keyPress(KeyEvent.VK_SHIFT);
-
-                                    rb.keyPress(KeyEvent.VK_SEMICOLON);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_SEMICOLON);
-
-                                    rb.keyRelease(KeyEvent.VK_SHIFT);
-                                    break;
-
-                                case 59: //59 is semecolon ";"
-                                    rb.keyPress(KeyEvent.VK_SEMICOLON);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_SEMICOLON);
-                                    break;
-
-                                case 39: //39 is quote "'"
-                                    rb.keyPress(KeyEvent.VK_QUOTE);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_QUOTE);
-                                    break;
-
-                                case 34: //34 is double quotes """
-                                    rb.keyPress(KeyEvent.VK_SHIFT);
-
-                                    rb.keyPress(KeyEvent.VK_QUOTE);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_QUOTE);
-
-                                    rb.keyRelease(KeyEvent.VK_SHIFT);
-                                    break;
-
-                                case 45: //45 is minus "-"
-
-                                    rb.keyPress(KeyEvent.VK_MINUS);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_MINUS);
-
-                                    break;
-
-                                case 42: //42 is divided "*"
-
-                                    rb.keyPress(KeyEvent.VK_MULTIPLY);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_MULTIPLY);
-
-                                    break;
-
-                                case 47: //47 is multiply "/"
-
-                                    rb.keyPress(KeyEvent.VK_DIVIDE);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_DIVIDE);
-
-                                    break;
-
-                                case 61: //61 is equals "="
-
-                                    rb.keyPress(KeyEvent.VK_EQUALS);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_EQUALS);
-
-                                    break;
-
-                                case 92: //92 is backslash "\"
-
-                                    rb.keyPress(KeyEvent.VK_BACK_SLASH);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_BACK_SLASH);
-
-                                    break;
-
-                                case 63: //63 is question mark "?"
-                                    rb.keyPress(KeyEvent.VK_SHIFT);
-
-                                    rb.keyPress(KeyEvent.VK_SLASH);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_SLASH);
-
-                                    rb.keyRelease(KeyEvent.VK_SHIFT);
-
-                                    break;
-
-                                case 33: //33 is VK_EXCLAMATION_MARK "!"
-                                    rb.keyPress(KeyEvent.VK_SHIFT);
-
-                                    rb.keyPress(KeyEvent.VK_1);
-                                    rb.delay(speed);// write speed by milisecondes
-                                    rb.keyRelease(KeyEvent.VK_1);
-
-                                    rb.keyRelease(KeyEvent.VK_SHIFT);
-
-                                    break;
-
-                            }
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "there is an ERROR please contact the developer");
-                        }
+                //  System.out.println(Integer.toString(read));
+                c = (char) read;
+                System.out.println(c);
+                System.out.println(read);
+
+                if (read >= 65 && read <= 90) {//this is the range of capital leters
+                    rb.keyPress(KeyEvent.VK_SHIFT);//turn on capslock
+
+                    rb.keyPress(read);
+                    rb.delay(speed);// write speed by milisecondes
+                    rb.keyRelease(read);
+
+                    rb.keyRelease(KeyEvent.VK_SHIFT);//turn off capslock
+
+                } else if (read >= 97 && read <= 122) {//this is the range of small leters
+
+                    switch (read) {//switch on all the small charecters to type it
+                        case 97:
+                            rb.keyPress(KeyEvent.VK_A);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_A);
+                            break;
+
+                        case 98:
+                            rb.keyPress(KeyEvent.VK_B);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_B);
+                            break;
+
+                        case 99:
+                            rb.keyPress(KeyEvent.VK_C);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_C);
+                            break;
+
+                        case 100:
+                            rb.keyPress(KeyEvent.VK_D);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_D);
+                            break;
+
+                        case 101:
+                            rb.keyPress(KeyEvent.VK_E);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_E);
+                            break;
+
+                        case 102:
+                            rb.keyPress(KeyEvent.VK_F);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_F);
+                            break;
+
+                        case 103:
+                            rb.keyPress(KeyEvent.VK_G);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_G);
+                            break;
+
+                        case 104:
+                            rb.keyPress(KeyEvent.VK_H);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_H);
+                            break;
+
+                        case 105:
+                            rb.keyPress(KeyEvent.VK_I);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_I);
+                            break;
+
+                        case 106:
+                            rb.keyPress(KeyEvent.VK_J);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_J);
+                            break;
+
+                        case 107:
+                            rb.keyPress(KeyEvent.VK_K);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_K);
+                            break;
+
+                        case 108:
+                            rb.keyPress(KeyEvent.VK_L);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_L);
+                            break;
+
+                        case 109:
+                            rb.keyPress(KeyEvent.VK_M);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_M);
+                            break;
+
+                        case 110:
+                            rb.keyPress(KeyEvent.VK_N);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_N);
+                            break;
+
+                        case 111:
+                            rb.keyPress(KeyEvent.VK_O);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_O);
+                            break;
+
+                        case 112:
+                            rb.keyPress(KeyEvent.VK_P);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_P);
+                            break;
+
+                        case 113:
+                            rb.keyPress(KeyEvent.VK_Q);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_Q);
+                            break;
+
+                        case 114:
+                            rb.keyPress(KeyEvent.VK_R);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_R);
+                            break;
+
+                        case 115:
+                            rb.keyPress(KeyEvent.VK_S);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_S);
+                            break;
+
+                        case 116:
+                            rb.keyPress(KeyEvent.VK_T);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_T);
+                            break;
+
+                        case 117:
+                            rb.keyPress(KeyEvent.VK_U);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_U);
+                            break;
+
+                        case 118:
+                            rb.keyPress(KeyEvent.VK_V);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_V);
+                            break;
+
+                        case 119:
+                            rb.keyPress(KeyEvent.VK_W);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_W);
+                            break;
+
+                        case 120:
+                            rb.keyPress(KeyEvent.VK_X);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_X);
+                            break;
+
+                        case 121:
+                            rb.keyPress(KeyEvent.VK_Y);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_Y);
+                            break;
+
+                        case 122:
+                            rb.keyPress(KeyEvent.VK_Z);
+                            rb.delay(speed);// write speed by milisecondes
+                            rb.keyRelease(KeyEvent.VK_Z);
+
                     }
 
-                    read = fr.read();
+                } else {// switch on all symbols like ""
+                    try {
+                        switch (read) {
+                            case 46: //46 is dot "."
+                                rb.keyPress(read);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(read);
+                                break;
 
+                            case 32: //32 is Space " "
+                                rb.keyPress(KeyEvent.VK_SPACE);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_SPACE);
+                                break;
+
+                            case 44: //44 is coma ","
+                                rb.keyPress(KeyEvent.VK_COMMA);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_COMMA);
+                                break;
+
+                            case 58: //58 is colon ":"
+                                rb.keyPress(KeyEvent.VK_SHIFT);
+
+                                rb.keyPress(KeyEvent.VK_SEMICOLON);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_SEMICOLON);
+
+                                rb.keyRelease(KeyEvent.VK_SHIFT);
+                                break;
+
+                            case 59: //59 is semecolon ";"
+                                rb.keyPress(KeyEvent.VK_SEMICOLON);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_SEMICOLON);
+                                break;
+
+                            case 39: //39 is quote "'"
+                                rb.keyPress(KeyEvent.VK_QUOTE);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_QUOTE);
+                                break;
+
+                            case 34: //34 is double quotes """
+                                rb.keyPress(KeyEvent.VK_SHIFT);
+
+                                rb.keyPress(KeyEvent.VK_QUOTE);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_QUOTE);
+
+                                rb.keyRelease(KeyEvent.VK_SHIFT);
+                                break;
+
+                            case 45: //45 is minus "-"
+
+                                rb.keyPress(KeyEvent.VK_MINUS);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_MINUS);
+
+                                break;
+
+                            case 42: //42 is divided "*"
+
+                                rb.keyPress(KeyEvent.VK_MULTIPLY);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_MULTIPLY);
+
+                                break;
+
+                            case 47: //47 is multiply "/"
+
+                                rb.keyPress(KeyEvent.VK_DIVIDE);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_DIVIDE);
+
+                                break;
+
+                            case 61: //61 is equals "="
+
+                                rb.keyPress(KeyEvent.VK_EQUALS);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_EQUALS);
+
+                                break;
+
+                            case 92: //92 is backslash "\"
+
+                                rb.keyPress(KeyEvent.VK_BACK_SLASH);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_BACK_SLASH);
+
+                                break;
+
+                            case 63: //63 is question mark "?"
+                                rb.keyPress(KeyEvent.VK_SHIFT);
+
+                                rb.keyPress(KeyEvent.VK_SLASH);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_SLASH);
+
+                                rb.keyRelease(KeyEvent.VK_SHIFT);
+
+                                break;
+
+                            case 33: //33 is VK_EXCLAMATION_MARK "!"
+                                rb.keyPress(KeyEvent.VK_SHIFT);
+
+                                rb.keyPress(KeyEvent.VK_1);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_1);
+
+                                rb.keyRelease(KeyEvent.VK_SHIFT);
+
+                                break;
+
+                            case 48: //48 is zero "0"
+
+                                rb.keyPress(KeyEvent.VK_0);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_0);
+
+                                break;
+
+                            case 49: //49 is one "1"
+
+                                rb.keyPress(KeyEvent.VK_1);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_1);
+
+                                break;
+
+                            case 50: //50 is two "2"
+
+                                rb.keyPress(KeyEvent.VK_2);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_2);
+
+                                break;
+
+                            case 51: //51 is three "3"
+
+                                rb.keyPress(KeyEvent.VK_3);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_3);
+
+                                break;
+
+                            case 52: //52 is four "4"
+
+                                rb.keyPress(KeyEvent.VK_4);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_4);
+
+                                break;
+
+                            case 53: //53 is five "5"
+
+                                rb.keyPress(KeyEvent.VK_5);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_5);
+
+                                break;
+
+                            case 54: //54 is six "6"
+
+                                rb.keyPress(KeyEvent.VK_6);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_6);
+
+                                break;
+
+                            case 55: //55 is seven "7"
+
+                                rb.keyPress(KeyEvent.VK_7);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_7);
+
+                                break;
+
+                            case 56: //56 is eight "8"
+
+                                rb.keyPress(KeyEvent.VK_8);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_8);
+
+                                break;
+
+                            case 57: //57 is nine "9"
+
+                                rb.keyPress(KeyEvent.VK_9);
+                                rb.delay(speed);// write speed by milisecondes
+                                rb.keyRelease(KeyEvent.VK_9);
+
+                                break;
+
+                        }
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "there is an ERROR please contact the developer");
+                    }
                 }
-            
+
+                read = fr.read();
+
+            }
 
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "one");
